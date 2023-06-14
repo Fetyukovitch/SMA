@@ -1,0 +1,14 @@
+fastapi==0.95.2
+uvicorn==0.22.0
+openai==0.27.8
+pandas==1.5.3
+praw==7.7.0
+prawcore==2.3.0
+google-cloud-bigquery==2.34.4
+google-cloud-storage==2.4.0
+googleapis-common-protos==1.56.4
+pydata-google-auth==1.4.0
+colorama
+python-dotenv
+yfinance
+scikit-learn
