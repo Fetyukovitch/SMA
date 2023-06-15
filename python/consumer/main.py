@@ -1,8 +1,10 @@
 from cemail import Email
 from fastapi import FastAPI
 from data import Data
+import requests
+from predict import predictor
+from datetime import date 
 
-data = Data()
 app = FastAPI()
 
 def donwload_model():
@@ -13,12 +15,16 @@ def model_predict():
 
 @app.post('/email')
 def send_email():
+    today = date.today().strftime('%Y-%m-%d')
+    data = Data()
     result = data.get_emails()
+    data_predicted = predictor(today)
+    prediction = data_predicted[0]
 
     for email_address in result:
         print(email_address)
         mail = Email()
-        mail.send(email_address, 'APPL recomendation', 'buy it!')
+        mail.send(email_address, 'APPL recomendation', prediction)
     return {'status': 'ok'}
 
 @app.post('/emails')

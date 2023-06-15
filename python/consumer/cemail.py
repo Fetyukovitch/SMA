@@ -39,13 +39,13 @@ class Email:
                 {}
             </style>
           </head>
-          <body>
+          <body style="color: #666">
             <h2>Daily recomendation</h2>
-            <div>{}</div>
-            <p>
-                {}
+            <div>Date: {}</div>
+            <p style="font-size: 1.2rem; border: solid 2px #999; border-radius: 5px; backgroud-color: #ddd; padding: 1rem 2rem; ">
+                Recomendation: <span style="text-transform: capitalize; color: #242">{}</span>
             </p>
-            <h3>By SMA Team</h3>
+            <h3 style="color: #898">By SMA Team</h3>
           </body>
         </html>
         """.format(styles, today.strftime("%d/%m/%Y"), recomendation)
